@@ -8,6 +8,8 @@ import AssurScreen from "./screens/AssurScreen";
 import PermisScreen from "./screens/PermisScreen";
 import CGScreen from "./screens/CGScreen";
 import VisiteScreen from "./screens/VisiteScreen";
+import RenouvellementScreen from "./screens/RenouvellementScreen";
+import DemandeScreen from "./screens/DemandeScreen";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -20,10 +22,10 @@ export default function App() {
         <Stack.Screen name="Permis" component={PermisScreen}/>
         <Stack.Screen name="Carte Grise" component={CGScreen}/>
         <Stack.Screen name="Visite" component={VisiteScreen}/>
+        <Stack.Screen name="Renouvellement" component={RenouvellementScreen}/>
+        <Stack.Screen name="DemandeRV" component={DemandeScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
-    // <View style={styles.container}>
-    //   <Text>Hello World</Text>
-    // </View>
+  
   )
 }

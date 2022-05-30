@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet,Image } from 'react-native';
 import { Card } from "react-native-elements";
+import { Link } from "@react-navigation/native";
 
 export default function VisiteScreen() {
     return(
@@ -12,7 +13,7 @@ export default function VisiteScreen() {
                 </Card>
             </View>
              
-            <Text style={{color: 'blue', textDecorationLine: 'underline'}}>Demander un Rendez-vous</Text>
+            <Link to={{screen: 'DemandeRV'}} style={{color: 'blue'}}>Demander un Rendez-vous</Link>
         </View>
     )
 }

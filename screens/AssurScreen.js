@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { Card } from "react-native-elements";
+import { Link } from "@react-navigation/native";
 
 
 export default function AssurScreen() {
@@ -12,8 +13,7 @@ export default function AssurScreen() {
                     <Image source={require('../assets/qr-code.jpg')} />
                 </Card>
             </View>
-             
-            <Text style={{color: 'blue', textDecorationLine: 'underline'}}>Renouveler son assurance</Text>
+            <Link to={{screen: 'Renouvellement'}} style={{color: 'blue'}}>Renouveler son assurance</Link>
 
         </View>
     )
