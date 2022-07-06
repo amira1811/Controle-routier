@@ -1,18 +1,19 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, Button } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { View, Text, StyleSheet, Image, TouchableOpacity, Button, ScrollView } from 'react-native';
 import { Card } from 'react-native-elements';
 
 
+const Tab = createBottomTabNavigator();
 export default function HomeScreen({navigation}) {
   return(
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style= {styles.text}>Hello World
           its a home screen
       </Text>
 
-      <Button title="Go To Login" onPress={() => navigation.navigate('Login')}></Button>
-
-      <View style={{flexDirection: 'row'}}>
+      
         <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Assurance')}>
           <Card>
               <Card.Title>ASSURANCE</Card.Title>
@@ -23,19 +24,18 @@ export default function HomeScreen({navigation}) {
               </View>
           </Card>
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Visite')}>
           <Card>
-              <Card.Title>VISITE</Card.Title>
+              <Card.Title>VISITE TECHNIQUE</Card.Title>
               <Card.Divider />
               <View style={{position: "relative", alignItems: "center"}} >
                 <Image style = {styles.cardImage} source={require('../assets/img1.jpg')} />
-                <Text style={styles.text}>VISITE</Text>
+                <Text style={styles.text}>VISITE TECHNIQUE</Text>
               </View>
           </Card>
         </TouchableOpacity>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
+      
       <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Permis')}>
           <Card>
               <Card.Title >PERMIS</Card.Title>
@@ -46,6 +46,7 @@ export default function HomeScreen({navigation}) {
               </View>
           </Card>
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Carte Grise')}>
           <Card >
               <Card.Title>CARTE GRISE</Card.Title>
@@ -56,9 +57,12 @@ export default function HomeScreen({navigation}) {
               </View>
           </Card>
         </TouchableOpacity>
-        
-      </View>   
-    </View>
+           
+        {/* <NavigationContainer>
+              <Tab.Navigator>
+                <Tab.Screen name='Home' component={'HomeScreen'}/>  
+              </Tab.Navigator>          </NavigationContainer> */}
+    </ScrollView>
   )
 }
 
@@ -66,8 +70,7 @@ export default function HomeScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingHorizontal: 40
     
   },
   text: {
@@ -79,7 +82,8 @@ const styles = StyleSheet.create({
   },
   card: {
     borderRadius: 30,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    margin: 10
   }
   
 })
